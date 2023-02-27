@@ -24,19 +24,13 @@ const routes = createBrowserRouter([
 function AppRout() {
   return (
     <div className="App">
-      <Link to="/products">Products</Link>
-      <Link to="/productname1">ProductName1</Link>
-      <Link to="/productname2">ProductName2</Link>
-      <Link to="/mycart">MyCart</Link>
-      <Link to="/myorders">MyOrders</Link>
-   {/* <Products/>
-   <ProductName1/>
-   <ProductName2/>
-   <MyCart/>
-   <MyOrders/> */}
    <main>
     <Routes>
         <Route path="/products" element={<Products />} />
+        <Route path="/productname1" element={<ProductName1 />} />
+        <Route path="/productname2" element={<ProductName2 />} />
+        <Route path="/mycart" element={<MyCart/>} />
+        <Route path="/myorders" element={<MyOrders/>} />
     </Routes>
    </main>
    </div>
