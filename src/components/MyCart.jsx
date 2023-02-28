@@ -1,24 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BrowserRouter,createBrowserRouter,Link,Route,Router,Routes, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 
 const MyCart = () => {
     const navigate = useNavigate()
   return (
     <ContainerProducts>
-        <Header>
-           <div>LOGO</div> 
-           <Menu>
-             <Link to="/products"><Active>Products</Active> </Link>
-             <Link to="/mycart"><Active>My Cart</Active> </Link>
-             <Link to="/myorders"> <Active>My Orders</Active> </Link>
-           </Menu>
-        </Header> 
         <Main>
            <Product>
               <Productus>My Cart Page bla bla bla</Productus>
            </Product>
-           <Back onClick={()=>navigate("/products")}>Go Back</Back>
+           <Back onClick={()=>navigate("/mainproducts")}>Go Back</Back>
       </Main>
     </ContainerProducts>
   )
@@ -41,7 +33,7 @@ const Header = styled.div`
 
 `
 
-const Menu = styled.div`
+const Menu = styled.ul`
     display: flex;
     justify-content: space-between;
     width: 400px;
@@ -86,7 +78,7 @@ const ContainerProducts = styled.div`
     margin-left: 500px;
 `
 
-const Active = styled.div`
+const Active = styled.li`
     :active {
         color: black;
     }

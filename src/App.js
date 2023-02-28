@@ -4,31 +4,19 @@ import MyCart from './components/MyCart';
 import MyOrders from './components/MyOrders';
 import ProductName1 from './components/ProductName1';
 import ProductName2 from './components/ProductName2';
-import Products from './components/Products';
+import HeaderProducts from './components/HeaderProducts';
+import MainProducts from './components/MainProducts';
 
-const routes = createBrowserRouter([
-  {
-    path: "/products",
-    element: <Products/>,
-  },
-  {
-    path: "/mycart",
-    element: <MyCart/>,
-  },
-  {
-    path: "/myorders",
-    element: <MyOrders/>,
-  },
-])
 
 function AppRout() {
   return (
     <div className="App">
+      <HeaderProducts/>
    <main>
     <Routes>
-        <Route path="/products" element={<Products />} />
-        <Route path="/productname1" element={<ProductName1 />} />
-        <Route path="/productname2" element={<ProductName2 />} />
+        <Route path="/mainproducts" element={<MainProducts />} />
+        <Route path="/mainproducts/:productname1" element={<ProductName1 />} />
+        <Route path="/mainproducts/:productname2" element={<ProductName2 />} />
         <Route path="/mycart" element={<MyCart/>} />
         <Route path="/myorders" element={<MyOrders/>} />
     </Routes>
