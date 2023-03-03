@@ -1,26 +1,48 @@
-import { BrowserRouter,createBrowserRouter,Link,Route,Router,Routes, Outlet } from 'react-router-dom';
+import { BrowserRouter,Route,Routes} from 'react-router-dom';
 import './App.css';
-import MyCart from './components/MyCart';
-import MyOrders from './components/MyOrders';
-import ProductName1 from './components/ProductName1';
-import ProductName2 from './components/ProductName2';
-import HeaderProducts from './components/HeaderProducts';
-import MainProducts from './components/MainProducts';
+import MyCart from './pages/Students';
+import MyOrders from './pages/Ratings';
+import ProductName1 from './pages/ProductName1';
+import MainProducts from './pages/MainProducts';
+import LayoutHeaderProducts from './layout/LayoutHeaderProducts';
+import Anouncements from './sidebar/Anouncements'
+import Schedule  from './sidebar/Schedule'
+import Notifications from './sidebar/Notifications'
+import Submitted from './pages/Submitted';
+import Waiting from './pages/Waiting';
+import Late from './pages/Late';
+import SideBar from './components/SideBar';
+import CoursesPage from './sidebar/CoursesPage';
+import Students from './pages/Students';
+import StudentName1 from './pages/StudentName1';
+import Ratings from './pages/Ratings';
 
 
 function AppRout() {
   return (
     <div className="App">
-      <HeaderProducts/>
-   <main>
     <Routes>
-        <Route path="/mainproducts" element={<MainProducts />} />
-        <Route path="/mainproducts/:productname1" element={<ProductName1 />} />
-        <Route path="/mainproducts/:productname2" element={<ProductName2 />} />
-        <Route path="/mycart" element={<MyCart/>} />
-        <Route path="/myorders" element={<MyOrders/>} />
+       <Route path="/" element = {<LayoutHeaderProducts/>}>
+          <Route path="courses/" element={<CoursesPage />} >
+            <Route path="materials" element={<MainProducts />}/>
+
+            <Route path="materials/:detail" element={<ProductName1 />}>
+               <Route path="submitted" element={<Submitted/>} />
+               <Route path="waiting" element={<Waiting/>} />
+               <Route path="late" element={<Late/>} />
+            </Route>
+           
+            <Route path="students" element={<Students />} />
+              <Route path="students/:studentsname1" element={<StudentName1/>}/>
+        
+          
+            <Route path="ratings" element={<Ratings />} />
+          </Route> 
+            <Route path="anouncements" element={<Anouncements />} />
+            <Route path="notifications" element={<Notifications />} />
+            <Route path="schedule" element={<Schedule/>} />
+      </Route>
     </Routes>
-   </main>
    </div>
   );
 }

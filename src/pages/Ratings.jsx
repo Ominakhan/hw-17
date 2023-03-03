@@ -3,22 +3,20 @@ import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom';
 
 
-const MyOrders = () => {
+const Ratings = () => {
     const navigate = useNavigate()
   return (
     <ContainerProducts>
         <Main>
            <Product>
-              <Productus>My Orders Page bla bla bla</Productus>
-              
+              <Productus>Ratings page</Productus>
            </Product>
-           <Back onClick={()=>navigate("/mainproducts")}>Go Back</Back>  
         </Main> 
     </ContainerProducts>
   )
 }
 
-export default MyOrders;
+export default Ratings;
 
 const Main = styled.div`
      width: 700px;
@@ -34,27 +32,13 @@ const Product = styled.div`
     margin-left: 30px;
     margin-top: 20px;
     padding-top: 18px;
+    padding-left: 20px;
 `
 
 const Productus = styled.p`
     font-size: 24px;
 `
 
-const Back = styled.button`
-    margin-left: -540px;
-    margin-top: 20px;
-    font-size: 18px;
-    border-radius: 18px;
-    width: 100px;
-    height: 40px;
-    background-color: #2f8386;
-    color: white;
-    cursor: pointer;
-    :active {
-        background-color: green;
-    }
-`
-
 const ContainerProducts = styled.div`
-    margin-left: 500px;
+  
 `

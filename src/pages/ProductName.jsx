@@ -1,23 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate, useParams } from 'react-router-dom';
 
-const ProductName2 = () => {
+const ProductName = () => {
     const navigate=useNavigate()
+    const params = useParams()
   return (
     <ContainerProducts>
         <Main>
            <Product>
-              <Productus>Product Details page</Productus>
-              <Productus>Product Name 2</Productus>
+              <Productus>Material Details page</Productus>
+              <Productus>Material 2</Productus>
            </Product>
-           <Back onClick={()=>navigate("/mainproducts")}>Go Back</Back>
         </Main> 
+        <Outlet/>
     </ContainerProducts>
   )
 }
 
-export default ProductName2;
+export default ProductName;
 
 
 const Main = styled.div`
@@ -49,6 +50,7 @@ const Back = styled.button`
     height: 40px;
     background-color: #2f8386;
     color: white;
+    margin-left: 30px;
     cursor: pointer;
     :active {
         background-color: green;
@@ -56,5 +58,5 @@ const Back = styled.button`
 `
 
 const ContainerProducts = styled.div`
-    margin-left: 500px;
+   
 `
